@@ -21,11 +21,8 @@
     "webmozart/path-util": "^2.3"
   },
   "autoload": {
-    "classmap": [
-      "src/DocksalCommand.php",
-      "src/DrushCommand.php",
-      "src/Message.php",
-      "src/SingleCommandApplication.php"
-    ]
+    "psr-4": {
+      "DrupalKit\\Docksal\\": "src"
+    }
   }
 }
