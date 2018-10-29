@@ -22,7 +22,7 @@ class DocksalCommand extends Command {
   /**
    * The message class.
    *
-   * @var \VML\Util\Message
+   * @var \DrupalKit\Docksal\Util\Message
    */
   public $message;
 

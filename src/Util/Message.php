@@ -1,6 +1,6 @@
 <?php
 
-namespace DrupalKit;
+namespace DrupalKit\Docksal\Util;
 
 use Symfony\Component\Console\Style\SymfonyStyle;
 
