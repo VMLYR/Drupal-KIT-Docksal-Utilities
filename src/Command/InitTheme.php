@@ -47,7 +47,7 @@ class InitTheme extends DocksalCommand {
     $this->setName('init-theme')
       ->setDescription('Theme initialization from scaffold themes.');
 
-    $this->title = 'SWIG Task Runner';
+    $this->title = 'Theme Scaffolder';
   }
 
   /**
@@ -71,6 +71,7 @@ class InitTheme extends DocksalCommand {
     // Exit early if there are no places to put the theme.
     if (empty($swig_sources)) {
       $this->message->error('No theme source directories set up.');
+      return;
     }
 
     // Ask for the theme source option if there is more than 1.
@@ -79,7 +80,6 @@ class InitTheme extends DocksalCommand {
       $swig_source_selection = $this->message->choice('Where would you like to build to?', $swig_sources);
       $swig_source_key = array_search($swig_source_selection, $swig_sources);
     }
-
 
     // Get requested theme to scaffold from.
     $theme_options = [];
@@ -204,6 +204,11 @@ class InitTheme extends DocksalCommand {
     $this->runner('rm -rf README.md');
     $this->runner("find . -type f -exec sed -i 's/{$theme_option_key}/{$name_cleaned}/g' {} +");
     $this->runner("rename 's/{$theme_option_key}/{$name_cleaned}/g' *");
+    $this->message->step_finish();
+
+    // Move gulp config.
+    $this->message->step_status('Move gulp config');
+    $this->runner("mv theme_{$name_cleaned}.js ../../gulp_config/");
     $this->message->step_finish();
 
     $this->message->success("Theme created! Please update Title and Description in the theme's {$name_cleaned}.info.yml file.");
