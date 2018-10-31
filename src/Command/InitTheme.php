@@ -21,20 +21,20 @@ class InitTheme extends DocksalCommand {
 
   protected function themes() {
     return [
-      'broth' => [
-        'title' => 'Broth',
-        'description' => 'A plain-but-savory scaffolding theme.',
-        'theme_repo' => 'https://github.com/VML/Drupal-Broth.git',
+      'skeleto' => [
+        'title' => 'Skeleto',
+        'description' => 'A bare-bones scaffolding theme.',
+        'theme_repo' => 'https://github.com/VML/Drupal-Theme-Skeleto.git',
         'theme_repo_branch' => 'master',
-        'source_repo' => 'https://github.com/VML/Drupal-Source-Broth.git',
+        'source_repo' => 'https://github.com/VML/Drupal-Theme-Source-Skeleto.git',
         'source_repo_branch' => 'master'
       ],
-      'chowder' => [
-        'title' => 'Chowder',
-        'description' => 'A dense-but-tasty scaffolding theme. Works best with Water specimen (Waterwork).',
-        'theme_repo' => 'https://github.com/VML/Drupal-Theme-Chowder.git',
+      'denim' => [
+        'title' => 'Denim',
+        'description' => 'A feature-filled scaffolding theme that works well with the Kastoro profile.',
+        'theme_repo' => 'https://github.com/VML/Drupal-Theme-Denim.git',
         'theme_repo_branch' => 'master',
-        'source_repo' => 'https://github.com/VML/Drupal-Theme-Source-Chowder.git',
+        'source_repo' => 'https://github.com/VML/Drupal-Theme-Source-Denim.git',
         'source_repo_branch' => 'master'
       ],
     ];
