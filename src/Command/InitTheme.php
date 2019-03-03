@@ -120,7 +120,7 @@ class InitTheme extends DocksalCommand {
     $this->message->step_status('Drupal themes custom');
     chdir($dir_themes);
     if (!is_dir('custom')) {
-      mkdir('custom', 755);
+      mkdir('custom', 0755);
     }
     chdir($dir_themes_custom);
     $this->message->step_finish();
@@ -148,7 +148,7 @@ class InitTheme extends DocksalCommand {
     // Create themes directory if it doesn't exist.
     $this->message->step_status('Source themes');
     if (!is_dir('themes')) {
-      mkdir('themes', 755);
+      mkdir('themes', 0755);
     }
     chdir('themes');
     $this->message->step_finish();
