@@ -144,9 +144,6 @@ class DocksalCommand extends Command {
 
     $process = new Process($cmd);
     $process->setTty(TRUE);
-    $process->setTimeout(60);
-    $process->start();
-    $process->wait();
 
     $output = [];
     $status = $process->run(
